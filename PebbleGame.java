@@ -18,19 +18,24 @@ public class PebbleGame {
     bagList = new ArrayList<Bags>();
   }
   public static void main(String[] args) {
+      System.out.println("Welcome to the PebbleGame!!");
+      System.out.println("You will be asked to enter the number of players and then then for the " +
+              "location of three files in turn containing comma separated integer values for the " +
+              "pebble weights.");
+      System.out.println("The integer values must be strictly positive.");
+      System.out.println("The game will be simulated, and output written to files in this directory.");
       userInput();
       if (PebbleGame.testUserInputPlayer(number_of_players)) {
-          if (testUserInputLocation(file_location_0)) {
-              if (testUserInputLocation(file_location_1)) {
-                  if (testUserInputLocation(file_location_2)) {
-                      try {
-                          // convertFileToArrayList(file_location_0); // need to convert all at once
-                          createPlayers(number_of_players);
-                          Bags.dealToBags();
-                      } catch (Exception e) {
-                          System.out.println("There was an error with the file that you submitted.");
-                      }
-                  }
+          if (testUserInputLocation(file_location_0)
+                  && testUserInputLocation(file_location_1)
+                  && testUserInputLocation(file_location_2)) {
+              // test file formatting here
+              try {
+                  // convertFileToArrayList(file_location_0); // need to convert all at once
+                  createPlayers(number_of_players);
+                  Bags.dealToBags();
+              } catch (Exception e) {
+                  System.out.println("There was an error with the file that you submitted.");
               }
           }
           //SUCCESS MESSAGE
@@ -39,7 +44,7 @@ public class PebbleGame {
 
 
 
-  // METHOD THAT RECIEVES USER INPUT IN COMMAND LINE
+  // METHOD THAT RECEIVES USER INPUT IN COMMAND LINE
   public static void userInput() {
       Scanner scanner = new Scanner(System.in);
       System.out.println("Please enter the number of players: ");
@@ -61,11 +66,7 @@ public class PebbleGame {
   public static Boolean testUserInputPlayer(int number_of_players) {
     //if (number_of_players instanceof Integer && number_of_players > 0) {
       //return number_of_players > 0;
-      if (number_of_players > 0) {
-          return true;
-      } else {
-          return false;
-      }
+      return number_of_players > 0;
   }
 
   // METHOD TO TEST WHETHER THE FILE INPUT EXISTS AND IS IN LEGITIMATE FORMAT
@@ -74,7 +75,11 @@ public class PebbleGame {
       File temp = new File(file_location);
       return temp.exists();
   }
-
+  // METHOD TO TEST FILE FORMATTING
+  public static boolean testFileFormat(String file_location) {
+      // complete
+      return true;
+  }
 
   // METHOD TO CONVERT INPUT FILE INTO AN ARRAY LIST
   public static ArrayList<Integer> convertFileToArrayList(File file) {
@@ -85,7 +90,7 @@ public class PebbleGame {
   public static void createPlayers(int number_of_players) {
       for (int i = 1; i <= number_of_players; i++) {
       // fill in players class attributes
-          playerList.add(new Players());
+          playerList.add(new Players(1));
     }
   }
 }
