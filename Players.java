@@ -1,26 +1,22 @@
-
+import java.util.ArrayList;
 
 public class Players {
-  private int playerID
+  // may be unnecessary
+  private int playerID;
   private ArrayList<Integer> playerInventory;
   // CONSTRUCTOR METHOD
   public Players(int playerID) {
-    this.playerID = playerID
+    this.playerID = playerID;
   }
 
   // METHOD THAT RETURNS IF A PLAYER HAS WON
-  public getPlayerWinState() {
+  public boolean getPlayerWinState() {
     int InventoryTotal = 0;
     //this.playerInventory?
     for (int i: playerInventory) {
-      InventoryTotal += i:
+      InventoryTotal += i;
     }
-    if (InventoryTotal == 100) {
-      return true
-    }
-    else {
-      return false
-    }
+    return InventoryTotal == 100;
   }
 
 
