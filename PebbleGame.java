@@ -39,11 +39,11 @@ public class PebbleGame {
      scan.nextLine();
    }
    number_of_players = scanner.nextInt();
-   System.out.println("Please enter the location of bad number 0 to load: ");
+   System.out.println("Please enter the location of bag number 0 to load: ");
    file_location_0 = scanner.next();
-   System.out.println("Please enter the location of bad number 1 to load: ");
+   System.out.println("Please enter the location of bag number 1 to load: ");
    file_location_1 = scanner.next();
-   System.out.println("Please enter the location of bad number 2 to load: ");
+   System.out.println("Please enter the location of bag number 2 to load: ");
    file_location_2 = scanner.next();
  }
 

@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Bags {
   private int bagID;
-  private ArrayList<Integer> bagContents;
-  private List<Integer> synBagContents;
+  private ArrayList<Integer> bagInventory;
+  private List<Integer> syncBagInventory;
   // CONSTRUCTOR METHOD
-  public Bags(ArrayList<Integer> bagContents) {
-    this.bagContents = bagContents;
-    this.synBagContents = Collections.synchronizedList(bagContents);
+  public Bags(ArrayList<Integer> bagInventory) {
+    this.bagInventory = bagInventory;
+    this.syncBagInventory = Collections.synchronizedList(bagInventory);
   }
   // methods
 
